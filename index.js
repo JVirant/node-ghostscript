@@ -47,6 +47,25 @@ gs.prototype.nopause = function() {
   return this;
 };
 
+gs.prototype.compatibility = function(value) {
+  value = value||"1.4";
+  this.options.push('-dCompatibilityLevel='+value);
+  return this;
+};
+
+gs.prototype.papersize = function(size) {
+  this.options.push('-sPAPERSIZE=' + size);
+  this.options.push('-dFIXEDMEDIA');
+  this.options.push('-dPDFFitPage');
+  return this;
+};
+
+gs.prototype.pdfSettings = function(value) {
+  value = value||"/screen";
+  this.options.push('-dPDFSETTINGS='+value);
+  return this;
+};
+
 gs.prototype.output = function(file) {
   file = file || '-';
   this.options.push('-sOutputFile=' + file);
