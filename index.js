@@ -53,6 +53,11 @@ gs.prototype.compatibility = function(value) {
   return this;
 };
 
+gs.prototype.useCIEColor = function () {
+  this.options.push('-dUseCIEColor');
+  return this;
+};
+
 gs.prototype.papersize = function(size) {
   this.options.push('-sPAPERSIZE=' + size);
   this.options.push('-dFIXEDMEDIA');
